@@ -1,0 +1,36 @@
+<h1>Movie Information</h1>
+<table class="table table-striped table-bordered tinfo">
+    <tr>
+      <th><strong>Thumbnail:</strong></th>
+      <td><%= image_tag("#{@movie.id}.jpg", :alt => "Movie Thumbnail") %></td>
+    </tr>
+    
+    <tr>
+      <th>Title:</th>
+      <td><%= @movie.title %></td>
+    </tr>
+     
+    <tr>
+      <th>Year:</th>
+      <td><%= @movie.year %></td>
+    </tr>
+    
+    <tr>
+      <th>IMDB Rating:</th>
+      <td><%= @movie.imdb %></td>
+    </tr>
+    
+    <tr>
+      <th>Description:</th>
+      <td><%= @movie.description %></td>
+    </tr>
+</table>
+
+<h2>Reviews</h2>
+<%= render @movie.reviews %>
+
+<h2>Add a Review:</h2>
+<%= render 'reviews/form' %>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back to Movie List', movies_path %>

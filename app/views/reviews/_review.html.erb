@@ -1,0 +1,15 @@
+<p>
+  <strong>Author:</strong>
+  <%= review.author %>
+</p>
+ 
+<p>
+  <strong>Review:</strong>
+  <%= review.comment %>
+</p>
+
+<p>
+  <%= link_to 'Remove Review', [review.movie, review],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
